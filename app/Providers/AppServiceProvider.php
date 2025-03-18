@@ -21,5 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Passport::hashClientSecrets(); // Indica que se cifren los secretos de los clientes en la DB.
+
+        Passport::tokensCan([]); // Indica que puede o no hacer un token de usuario.
     }
 }
