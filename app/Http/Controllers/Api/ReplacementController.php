@@ -32,10 +32,10 @@ class ReplacementController extends Controller
         ]);
 
         
-        $flight = Replacement::create($validatedData);
+        $replacement = Replacement::create($validatedData);
 
 
-        return response()->json($flight, 200); 
+        return response()->json($replacement, 200); 
     }
 
     public function update(Request $request, string $id)
@@ -51,13 +51,13 @@ class ReplacementController extends Controller
     ]);
 
     
-    $flight = Replacement::findOrFail($id);
+    $replacement = Replacement::findOrFail($id);
 
     
-    $flight->update($validatedData);
+    $replacement->update($validatedData);
 
     
-    return response()->json($flight, 200);
+    return response()->json($replacement, 200);
 }
 
     public function destroy(string $id)
