@@ -28,9 +28,9 @@ class ApplianceController extends Controller
         'brand_id' => 'required|bigint|min:1',
     ]);
 
-    $plane = Appliance::create($validatedData);
+    $liance = Appliance::create($validatedData);
     
-    return response()->json($plane, 200 ); 
+    return response()->json($liance, 200 ); 
 }
 
     public function update(Request $request, string $id)
@@ -44,13 +44,13 @@ class ApplianceController extends Controller
     ]);
 
     
-    $plane = Appliance::findOrFail($id);
+    $liance = Appliance::findOrFail($id);
 
     
-    $plane->update($validatedData);
+    $liance->update($validatedData);
 
     
-    return response()->json($plane, 200);
+    return response()->json($liance, 200);
 }
 
     public function destroy(string $id)
