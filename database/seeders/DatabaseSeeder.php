@@ -22,15 +22,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);*/
+        Brand::factory(10)->create();
+        Replacement::factory(10)->create();
+        Appliance::factory(10)->create();
     }
-
-    public function runWithReplacementsAndAppliances(): void
-    {
-        $this->call([
-            Replacement::class,
-            Appliance::class,
-            Brand::class,
-        ]);
-    }
-
 }

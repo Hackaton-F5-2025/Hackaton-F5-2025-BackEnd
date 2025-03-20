@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Appliance extends Model
 {
     use HasFactory;
+    protected $table = 'home_appliance';
     protected $fillable = [
         'name',
         'description',

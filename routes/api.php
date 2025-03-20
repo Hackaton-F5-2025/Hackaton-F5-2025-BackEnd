@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ReplacementController;
 use App\Http\Controllers\Api\ApplianceController;
+use App\Http\Controllers\Api\BrandController;
 
 Route::get("/replacement", [ReplacementController::class, "index"])->name("apiireplacement");
 Route::get("/replacement/{id}", [ReplacementController::class, "show"])->name("show");
@@ -16,3 +17,5 @@ Route::get("/liance/{id}", [ApplianceController::class, "show"])->name("apiishow
 Route::post("/liance", [ApplianceController::class, "store"])->name("apiistore");
 Route::put("/liance/{id}", [ApplianceController::class, "update"])->name("apiiupdate");
 Route::delete("/liance/{id}", [ApplianceController::class, "destroy"])->name("apiidestroy");
+
+Route::get("/brand", [BrandController::class, "index"])->name("apiibrand");

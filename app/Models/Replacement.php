@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Replacement extends Model
 {
     use HasFactory;
+    protected $table = 'replacement';
     protected $fillable = [
         'name',
         'description',

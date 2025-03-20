@@ -19,7 +19,8 @@ return new class extends Migration
             $table->integer('amount');
             $table->double('price');
             $table->string('state');
-            $table->foreignId('brand_id')->constrained('brand')->onDelete('cascade');
+            $table->foreignId('brand_id')->nullable()->constrained('brand')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
