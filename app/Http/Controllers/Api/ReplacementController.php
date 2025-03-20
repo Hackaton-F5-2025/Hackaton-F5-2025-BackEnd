@@ -23,13 +23,14 @@ class ReplacementController extends Controller
     {
         
         $validatedData = $request->validate([
-            'name' => 'required|string(255)',
-            'description' => 'required|string|max:255',
-            'image_url' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+            'image_url' => 'required|url',
             'amount' => 'required|integer|min:1',
-            'price' => 'required|exists:prices,id',
-            'state' => 'string|bigint',
+            'price' => 'required|numeric|min:0',
+            'state' => 'required|string|max:50',
         ]);
+        
 
         
         $replacement = Replacement::create($validatedData);
@@ -42,12 +43,12 @@ class ReplacementController extends Controller
 {
     
     $validatedData = $request->validate([
-            'name' => 'required|string(255)',
-            'description' => 'required|string|max:255',
-            'image_url' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+            'image_url' => 'required|url',
             'amount' => 'required|integer|min:1',
-            'price' => 'required|exists:prices,id',
-            'state' => 'string|bigint',
+            'price' => 'required|numeric|min:0',
+            'state' => 'required|string|max:50',
     ]);
 
     

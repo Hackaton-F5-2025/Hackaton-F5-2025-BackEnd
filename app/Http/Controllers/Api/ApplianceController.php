@@ -22,11 +22,12 @@ class ApplianceController extends Controller
     public function store(Request $request)
 {
     $validatedData = $request->validate([
-        'name' => 'required|varchar|max:255',
-        'description' => 'required|varchar|min:1',
-        'model' => 'required|varchar|min:1',
-        'brand_id' => 'required|bigint|min:1',
+        'name' => 'required|string|max:255',
+        'description' => 'required|string|min:1',
+        'model' => 'required|string|min:1',
+        'brand_id' => 'required|integer|min:1',
     ]);
+    
 
     $liance = Appliance::create($validatedData);
     
@@ -40,7 +41,7 @@ class ApplianceController extends Controller
         'name' => 'required|string|max:255',
         'description' => 'required|string|min:1',
         'model' => 'required|string|min:1',
-        'brand_id' => 'required|bigint|min:1',
+        'brand_id' => 'required|integer|min:1',
     ]);
 
     
